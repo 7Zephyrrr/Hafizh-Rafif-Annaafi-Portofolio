@@ -11,47 +11,83 @@ import {
   ChevronRight, 
   Send as SendIcon, 
   Link as LucideLink, 
-  Mail 
+  Mail,
+  Code2,
+  Palette,
+  Cpu,
+  Database,
+  Globe,
+  Smartphone,
+  Layout,
+  FlaskConical,
+  GraduationCap,
+  User,
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram
 } from "lucide-react";
 
 const PROJECTS = [
   {
     title: "Nexus Analytics Dashboard",
-    description: "A high-performance real-time data visualization platform for global retail chains, processing over 1M events daily.",
-    tags: ["React", "Node.js"],
+    problem: "Global retail chains struggled to visualize massive real-time data streams, leading to delayed decision-making.",
+    solution: "Built a high-performance dashboard using React and Node.js that processes over 1M events daily with sub-second latency.",
+    tags: ["React", "Node.js", "D3.js"],
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAupzUvbD0kILADZ4UahcHP2E6YSbvEL_rZjvds3tWUtFOHN7o5b-vRjz3E9whA9oRyoNiU8uqzqMC6rNJAmjPkdDvehkD9Ef0Tdr0ytcI4aF8LgNQz5sZzSVcQJW4_D2vhr-yqcSSqAUolZStFLM-eJzLnhk4hej90PR8_vS5ipyy9pBwqp8_labLTliEYIhZn3Br1HaUyi6S_IcF6FS3hAL8bWBEB4AllEaA6Gu-tDtPW-pqHCB8RjvU8mI2vEsSP-0uEY1bR8erd",
     link: "#"
   },
   {
     title: "FinVault Mobile Banking",
-    description: "Redesigning the mobile banking experience with a focus on accessibility and intuitive financial management for Gen-Z.",
-    tags: ["UI/UX Design", "Figma"],
+    problem: "Traditional banking apps were too complex for Gen-Z users, lacking intuitive financial management tools.",
+    solution: "Redesigned the mobile experience with a focus on accessibility, simplified navigation, and visual goal tracking.",
+    tags: ["UI/UX Design", "Figma", "Prototyping"],
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAus4_KoPZTdBpMLnTEX9TiGpU6ayla68_KTx13g1sQQDaO5dh3clR4HWobQYOh63o7mb3fpACFZqhSHK2ulh-ldBGrjpNqvz4pDPfaYqGOatPddtnxE3etgcLcp7jDq9RDNSoenK6GfsaWxn0f2F_TWJCp_ktjGIk8d5t7UOKZNjxUZC9sDmDOlKAVBx72ByUlFNlcPtThXZkFTUO23N4BbWkSJPBu3H9KYX78GQbAfMSayfWxWaOTI7rTf6xZ0GwXTded6k6U-YDw",
+    link: "#"
+  },
+  {
+    title: "EcoTrack Smart Home",
+    problem: "Homeowners lacked a unified way to monitor and reduce their carbon footprint from household appliances.",
+    solution: "Developed an IoT-integrated platform that provides real-time energy insights and automated saving recommendations.",
+    tags: ["TypeScript", "Next.js", "Tailwind"],
+    image: "https://picsum.photos/seed/eco/800/600",
     link: "#"
   }
 ];
 
-const BLOG_POSTS = [
+const LAB_EXPERIMENTS = [
   {
-    date: "Oct 24, 2023",
-    readTime: "8 min read",
-    title: "Why TypeScript is non-negotiable in 2024",
-    excerpt: "Exploring the long-term benefits of static typing in modern web development architectures.",
+    title: "Generative Art Engine",
+    description: "A small p5.js experiment exploring recursive patterns and color theory.",
     link: "#"
   },
   {
-    date: "Sep 12, 2023",
-    readTime: "5 min read",
-    title: "The balance between aesthetics and utility",
-    excerpt: "Finding the sweet spot where beautiful UI meets exceptional UX through user testing.",
+    title: "CSS-Only 3D Engine",
+    description: "Pushing the limits of CSS transforms to create a navigable 3D room.",
     link: "#"
   },
   {
-    date: "Aug 05, 2023",
-    readTime: "12 min read",
-    title: "Mastering Tailwind CSS layouts",
-    excerpt: "A deep dive into complex grid and flexbox patterns using only utility classes.",
+    title: "Micro-Interaction Library",
+    description: "A collection of reusable Framer Motion components for delightful UIs.",
     link: "#"
+  }
+];
+
+const SKILLS = [
+  { name: "Frontend Dev", icon: <Layout className="size-6" />, tools: ["React", "Next.js", "Tailwind CSS"] },
+  { name: "Backend Systems", icon: <Database className="size-6" />, tools: ["Node.js", "Express", "PostgreSQL"] },
+  { name: "UI/UX Design", icon: <Palette className="size-6" />, tools: ["Figma", "Adobe XD", "Prototyping"] },
+  { name: "Mobile Apps", icon: <Smartphone className="size-6" />, tools: ["React Native", "Expo"] },
+  { name: "Core Tech", icon: <Code2 className="size-6" />, tools: ["TypeScript", "JavaScript", "Python"] },
+  { name: "DevOps", icon: <Cpu className="size-6" />, tools: ["Docker", "Vercel", "Git"] }
+];
+
+const EDUCATION = [
+  {
+    school: "SMK Negeri 1 (Vocational High School)",
+    degree: "Software Engineering Major",
+    period: "2021 - Present",
+    description: "Focusing on full-stack development, database management, and agile methodologies."
   }
 ];
 
@@ -70,7 +106,9 @@ export default function App() {
           <div className="hidden md:flex items-center gap-10">
             <a className="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
             <a className="text-sm font-medium hover:text-primary transition-colors" href="#projects">Projects</a>
-            <a className="text-sm font-medium hover:text-primary transition-colors" href="#blog">Blog</a>
+            <a className="text-sm font-medium hover:text-primary transition-colors" href="#lab">The Lab</a>
+            <a className="text-sm font-medium hover:text-primary transition-colors" href="#skills">Skills</a>
+            <a className="text-sm font-medium hover:text-primary transition-colors" href="#about">About</a>
             <a className="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
           </div>
           <div className="flex items-center gap-4">
@@ -82,7 +120,7 @@ export default function App() {
       </nav>
 
       <main className="max-w-6xl mx-auto px-6 pt-32">
-        {/* Hero Section */}
+        {/* 1. Hero Section */}
         <section className="grid md:grid-cols-2 gap-12 items-center mb-32">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
@@ -101,15 +139,15 @@ export default function App() {
               Hi, I'm Hafizh Rafif Annaafi. <span className="text-primary">Crafting digital experiences</span> and documenting the journey.
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
-              A multi-disciplinary developer and designer focused on building functional, beautiful, and human-centered web solutions.
+              A multi-disciplinary developer and designer focused on building functional, beautiful, and human-centered web solutions. I bridge the gap between complex code and intuitive design.
             </p>
             <div className="flex flex-wrap gap-4">
               <a className="bg-primary hover:bg-primary/90 text-background-dark px-8 py-4 rounded-lg font-bold transition-all flex items-center gap-2" href="#projects">
                 View Projects
                 <ArrowRight className="size-4" />
               </a>
-              <a className="bg-transparent border border-slate-300 dark:border-border-dark hover:border-primary/50 text-slate-900 dark:text-white px-8 py-4 rounded-lg font-bold transition-all" href="#blog">
-                Read Blog
+              <a className="bg-transparent border border-slate-300 dark:border-border-dark hover:border-primary/50 text-slate-900 dark:text-white px-8 py-4 rounded-lg font-bold transition-all" href="#contact">
+                Get in Touch
               </a>
             </div>
           </motion.div>
@@ -131,7 +169,7 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* Showcase Section (Projects) */}
+        {/* 2. Featured Projects */}
         <section className="my-32" id="projects">
           <div className="flex justify-between items-end mb-12">
             <div>
@@ -168,10 +206,17 @@ export default function App() {
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{project.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 mb-6 line-clamp-2">
-                    {project.description}
-                  </p>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">{project.title}</h3>
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <h4 className="text-xs font-bold uppercase text-primary mb-1">Problem</h4>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">{project.problem}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold uppercase text-primary mb-1">Solution</h4>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">{project.solution}</p>
+                    </div>
+                  </div>
                   <a className="inline-flex items-center gap-2 font-bold text-primary group-hover:gap-3 transition-all" href={project.link}>
                     Case Study <ArrowRight className="size-4" />
                   </a>
@@ -181,46 +226,104 @@ export default function App() {
           </div>
         </section>
 
-        {/* Blog Section */}
-        <section className="my-32" id="blog">
+        {/* 3. The Lab / Playground */}
+        <section className="my-32" id="lab">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Latest Thoughts</h2>
-            <p className="text-slate-600 dark:text-slate-400">Insights into development, design, and digital life.</p>
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
+              <FlaskConical className="text-primary" /> The Lab
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400">Small experiments, creative coding, and half-baked ideas.</p>
           </div>
-          <div className="flex flex-col border-t border-slate-200 dark:border-border-dark">
-            {BLOG_POSTS.map((post, idx) => (
-              <motion.a 
+          <div className="grid md:grid-cols-3 gap-6">
+            {LAB_EXPERIMENTS.map((exp, idx) => (
+              <motion.a
                 key={idx}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                href={exp.link}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="group py-10 flex flex-col md:flex-row md:items-center justify-between border-b border-slate-200 dark:border-border-dark hover:bg-slate-50 dark:hover:bg-card-dark/30 transition-all px-4" 
-                href={post.link}
+                transition={{ delay: idx * 0.1 }}
+                className="p-6 rounded-xl border border-slate-200 dark:border-border-dark bg-white dark:bg-card-dark hover:border-primary/50 transition-all group"
               >
-                <div className="flex flex-col gap-2 max-w-2xl">
-                  <div className="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-500 mb-2">
-                    <span>{post.date}</span>
-                    <span>•</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">{post.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{post.excerpt}</p>
-                </div>
-                <div className="mt-6 md:mt-0">
-                  <ChevronRight className="text-slate-300 dark:text-slate-600 group-hover:text-primary group-hover:translate-x-2 transition-all" />
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">{exp.title}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">{exp.description}</p>
+                <div className="flex items-center gap-2 text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                  View Experiment <ArrowRight className="size-3" />
                 </div>
               </motion.a>
             ))}
           </div>
-          <div className="mt-12 text-center">
-            <button className="bg-slate-900 dark:bg-white text-white dark:text-background-dark px-10 py-4 rounded-lg font-bold hover:bg-primary dark:hover:bg-primary transition-all cursor-pointer">
-              Browse All Articles
-            </button>
+        </section>
+
+        {/* 4. Skills & Tools */}
+        <section className="my-32" id="skills">
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Skills & Tools</h2>
+            <p className="text-slate-600 dark:text-slate-400">The technology stack I use to bring ideas to life.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+            {SKILLS.map((skill, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="flex flex-col gap-4"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                    {skill.icon}
+                  </div>
+                  <h3 className="font-bold text-slate-900 dark:text-white">{skill.name}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {skill.tools.map(tool => (
+                    <span key={tool} className="text-[10px] font-medium px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </section>
 
-        {/* CTA / Contact Section */}
+        {/* 5. About & Education */}
+        <section className="my-32" id="about">
+          <div className="grid md:grid-cols-2 gap-16">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                <User className="text-primary" /> About Me
+              </h2>
+              <div className="space-y-6 text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p>
+                  I am a passionate Software Engineering student with a deep interest in building scalable web applications and crafting exceptional user experiences. My journey started with a curiosity for how things work on the web, which evolved into a professional pursuit of excellence in both design and development.
+                </p>
+                <p>
+                  When I'm not coding, you can find me exploring new design trends, contributing to open-source projects, or documenting my learning journey through technical writing.
+                </p>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                <GraduationCap className="text-primary" /> Education
+              </h2>
+              <div className="space-y-8">
+                {EDUCATION.map((edu, idx) => (
+                  <div key={idx} className="relative pl-8 border-l border-primary/30">
+                    <div className="absolute left-[-5px] top-0 size-2.5 rounded-full bg-primary" />
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">{edu.school}</h3>
+                    <p className="text-primary font-medium text-sm mb-2">{edu.degree} • {edu.period}</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">{edu.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. Contact Section */}
         <section className="my-32" id="contact">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -240,10 +343,13 @@ export default function App() {
                 Get in Touch
               </a>
               <div className="flex gap-4">
-                <a className="size-12 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-border-dark flex items-center justify-center hover:text-primary transition-colors" href="#">
-                  <LucideLink className="size-5" />
+                <a className="size-12 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-border-dark flex items-center justify-center hover:text-primary transition-colors" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="size-5" />
                 </a>
-                <a className="size-12 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-border-dark flex items-center justify-center hover:text-primary transition-colors" href="#">
+                <a className="size-12 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-border-dark flex items-center justify-center hover:text-primary transition-colors" href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  <Github className="size-5" />
+                </a>
+                <a className="size-12 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-border-dark flex items-center justify-center hover:text-primary transition-colors" href="mailto:hello@hafizhrf.com">
                   <Mail className="size-5" />
                 </a>
               </div>
